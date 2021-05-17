@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const express = require('express');
 
 const server = express();
@@ -21,6 +21,7 @@ server.use((request, response, next) => {
 
     next();
 })
+
 
 server.get('/api', (request, response, next) => {
     console.log("a GET request was made");
